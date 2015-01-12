@@ -13,7 +13,7 @@ public class ExpenseItem {
 	 */
 	private Category category;
 	private String text;
-	private float amount;
+	private Float amount;
 	/**
 	 * @uml.property  name="currency"
 	 * @uml.associationEnd  
@@ -82,9 +82,13 @@ public class ExpenseItem {
 		meal;
 	}
 
-	public ExpenseItem() {
+	public ExpenseItem(Date date, Category category, String text, Float amount,CurrencyUnit currency) {
 		// TODO Auto-generated constructor stub
-		
+		this.date = date;
+		this.category = category;
+		this.text = text;
+		this.amount = amount;
+		this.currency = currency;
 	}
 
 	/**

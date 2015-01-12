@@ -15,7 +15,7 @@ public class TravelClaim {
 	/**
 	 * @author  dtruong1
 	 */
-	public enum status {
+	public enum Status {
 		/**
 		 * @uml.property  name="inprogress"
 		 * @uml.associationEnd  
@@ -34,7 +34,7 @@ public class TravelClaim {
 		 */
 		approved;
 	}
-	
+	private Status status;
 	private Boolean editable = true;
 	private Float[] total;
 	private Date date;
@@ -43,10 +43,19 @@ public class TravelClaim {
 	/**
 	 * 
 	 */
-	public TravelClaim() {
+	public TravelClaim(Status status,Date date, String text) {
 		// TODO Auto-generated constructor stub
+		this.setStatus(status);
+		this.date = date;
+		this.text = text;
 	}
 
+	public void addItem(ExpenseItem item){
+		this.items.add(item);
+	}
+	public void removeItem(int location) {
+		this.items.remove(location);
+	}
 	public void SetTotal() {
 		int length = ExpenseItem.CurrencyUnit.values().length;
 		Float[] total = new Float[length];
@@ -55,7 +64,17 @@ public class TravelClaim {
 		}
 		
 	}
-
+	/*
+	 * @return  the total
+	 * @uml.property  name="total"
+	 */
+	public String getTotal() { //String todo
+		String curr = "";
+		for (int i=0;i<ExpenseItem.CurrencyUnit.values().length;i++) {
+			Float price = this.items.get(i).getAmount();
+		}
+		return curr;
+	}
 	/**
 	 * @return  the date
 	 * @uml.property  name="date"
@@ -88,13 +107,7 @@ public class TravelClaim {
 		this.text = text;
 	}
 
-	/**
-	 * @return  the total
-	 * @uml.property  name="total"
-	 */
-	public Float[] getTotal() { //String todo
-		return total;
-	}
+	
 
 	/**
 	 * @return  the editable
@@ -110,6 +123,14 @@ public class TravelClaim {
 	 */
 	public void setEditable(Boolean editable) {
 		this.editable = editable;
+	}
+
+	public Status getStatus() {
+		return status;
+	}
+
+	public void setStatus(Status status) {
+		this.status = status;
 	}
 
 
