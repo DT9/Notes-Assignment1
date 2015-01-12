@@ -1,5 +1,6 @@
 package com.ualberta.dtruong1_notes;
 
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -21,3 +22,4 @@ public class MainActivity extends Activity {
     }
     
 }
+
