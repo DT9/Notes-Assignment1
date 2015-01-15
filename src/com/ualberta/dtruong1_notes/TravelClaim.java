@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;
+
 /**
  * @author  Dennis
  */
@@ -62,7 +64,6 @@ public class TravelClaim {
 		for (ExpenseItem item : items) {
 			total[item.getCurrency().ordinal()] += item.getAmount();
 		}
-		
 	}
 	/*
 	 * @return  the total
@@ -70,8 +71,15 @@ public class TravelClaim {
 	 */
 	public String getTotal() { //String todo
 		String curr = "";
+		CurrencyUnit[] currencies = ExpenseItem.CurrencyUnit.values();
 		for (int i=0;i<ExpenseItem.CurrencyUnit.values().length;i++) {
-			Float price = this.items.get(i).getAmount();
+			//ExpenseItem item = this.items.get(i);
+			Float price = total[i];
+			if (price == 0) {
+				continue;
+			}
+			curr += currencies[i];
+			curr += ": " + price + " ";
 		}
 		return curr;
 	}
