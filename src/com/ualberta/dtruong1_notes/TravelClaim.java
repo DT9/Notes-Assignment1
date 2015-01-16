@@ -58,7 +58,7 @@ public class TravelClaim {
 	}
 	public void SetTotal() {
 		int length = ExpenseItem.CurrencyUnit.values().length;
-		Float[] total = new Float[length];
+		this.total = new Float[length];
 		for (ExpenseItem item : items) {
 			total[item.getCurrency().ordinal()] += item.getAmount();
 		}
@@ -68,10 +68,11 @@ public class TravelClaim {
 	 * @return  the total
 	 * @uml.property  name="total"
 	 */
-	public String getTotal() { //String todo
+	public String getTotal() { //String
 		String curr = "";
 		for (int i=0;i<ExpenseItem.CurrencyUnit.values().length;i++) {
 			Float price = this.items.get(i).getAmount();
+			curr += ExpenseItem.CurrencyUnit.values()[i] + ":" + price.toString() + " ";
 		}
 		return curr;
 	}

@@ -15,9 +15,13 @@ limitations under the License.
 package com.ualberta.dtruong1_notes;
 
 
-import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
@@ -35,5 +39,17 @@ public class MainActivity extends Activity {
         return true;
     }
     
+    public void emailPeople(MenuItem menu) {
+    	Toast.makeText(this, "Helloz", Toast.LENGTH_SHORT).show();
+    	Intent intent = new Intent(MainActivity.this, ListExpenseActivity.class);
+    	startActivity(intent);
+    }
+    
+    public void addClaimItem(View v) {
+    	Toast.makeText(this, "add claim", Toast.LENGTH_LONG).show();
+    	Intent intent = new Intent(MainActivity.this, AddClaimInfo.class);
+    	startActivity(intent);
+    	
+    }
 }
 
