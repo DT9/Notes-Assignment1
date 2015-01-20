@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.util.Base64;
 
 public class ClaimListManager {
 	static String prefFile = "ClaimList";
@@ -34,7 +35,7 @@ public class ClaimListManager {
 	
 	
 	private ClaimListController ClaimListFromString(String listData) throws StreamCorruptedException, IOException, ClassNotFoundException {
-		ByteArrayInputStream bi = new ByteArrayInputStream(listData.getBytes());
+		ByteArrayInputStream bi = new ByteArrayInputStream(Base64.decode(listData, Base64.DEFAULT));
 		ObjectInputStream oi = new ObjectInputStream(bi);
 		return (ClaimListController) oi.readObject();
 	}
@@ -43,6 +44,7 @@ public class ClaimListManager {
 		SharedPreferences settings = context.getSharedPreferences(prefFile, Context.MODE_PRIVATE);
 		Editor editor = settings.edit();
 		editor.putString(slkey,claimInfoToString(sl));
+		editor.commit();
 	}
 
 	private String claimInfoToString(ClaimListController sl) throws IOException {
@@ -52,6 +54,6 @@ public class ClaimListManager {
 		oo.writeObject(sl);
 		oo.close();
 		byte bytes[] = bo.toByteArray();
-		return new String(bytes);
+		return Base64.encodeToString(bytes,Base64.DEFAULT);
 	}
 }

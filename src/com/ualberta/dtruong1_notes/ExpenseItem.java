@@ -1,5 +1,6 @@
 package com.ualberta.dtruong1_notes;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,7 +8,11 @@ import java.util.Date;
 /**
  * @author  dtruong1
  */
-public class ExpenseItem {
+public class ExpenseItem implements Serializable{
+	/**
+	 * expense item id
+	 */
+	private static final long serialVersionUID = -6896056147275778175L;
 	private Date date;
 	/**
 	 * @uml.property  name="category"

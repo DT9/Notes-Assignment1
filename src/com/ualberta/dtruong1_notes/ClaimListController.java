@@ -39,6 +39,13 @@ public class ClaimListController implements Serializable {
 		notifyListeners();
 		
 	}
+	public int size() {
+		return claimlist.size();
+	}
+	
+	public boolean contains(TravelClaim claim) {
+		return claimlist.contains(claim);
+	}
 	public static void removeClaim(TravelClaim claim) 
 	{
 		if (claimlist == null) {

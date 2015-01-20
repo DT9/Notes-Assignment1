@@ -6,6 +6,8 @@ import android.view.Menu;
 
 public class ListExpenseActivity extends Activity {
 
+	
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -18,5 +20,7 @@ public class ListExpenseActivity extends Activity {
 		getMenuInflater().inflate(R.menu.list_expense, menu);
 		return true;
 	}
+	
+	
 
 }

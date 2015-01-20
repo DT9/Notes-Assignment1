@@ -3,6 +3,7 @@
  */
 package com.ualberta.dtruong1_notes;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -14,8 +15,13 @@ import com.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;
 /**
  * @author  Dennis
  */
-public class TravelClaim implements Comparable<TravelClaim>{
+public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 	
+	/**
+	 * travelclaim id
+	 */
+	private static final long serialVersionUID = 3695701892336777254L;
+
 	/**
 	 * @author  dtruong1
 	 */
@@ -60,6 +66,10 @@ public class TravelClaim implements Comparable<TravelClaim>{
 		this.setEnd(end);
 	}
 
+	public int hashCode() {
+		return ("claim:"+date.toString()).hashCode();
+	}
+	
 	public String toString() {
 		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		String claim = status.toString() + "\n" + formatter.format(date) + " to " + formatter.format(end) + "\n" + getTotal() ;
