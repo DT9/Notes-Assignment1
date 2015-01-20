@@ -13,5 +13,11 @@
     <string name="add_expense">Add Expense Item</string>
     <string name="title_activity_list_expense">Expenses</string>
     <string name="title_activity_add_claim_info">Claim Information</string>
-
+<string-array name="status_array">
+        <item>inprogress</item>
+        <item>submitted</item>
+        <item>returned</item>
+        <item>approved</item>
+    </string-array>
+    
 </resources>

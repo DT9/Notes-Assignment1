@@ -3,6 +3,8 @@
  */
 package com.ualberta.dtruong1_notes;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,20 +40,28 @@ public class TravelClaim {
 	}
 	private Status status;
 	private Boolean editable = true;
-	private Float[] total;
+	private int[] total;
 	private Date date;
+	private Date end;
 	private String text;
 	private List<ExpenseItem> items = new ArrayList<ExpenseItem>();
 	/**
 	 * 
 	 */
-	public TravelClaim(Status status,Date date, String text) {
+	public TravelClaim(Status status,Date date,Date end, String text) {
 		// TODO Auto-generated constructor stub
 		this.setStatus(status);
 		this.date = date;
 		this.text = text;
+		this.setEnd(end);
 	}
 
+	public String toString() {
+		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		String claim = status.toString() + "\n" + formatter.format(date) + " to " + formatter.format(end) + "\n" + getTotal() ;
+		return claim;
+
+	}
 	public void addItem(ExpenseItem item){
 		this.items.add(item);
 	}
@@ -60,7 +70,7 @@ public class TravelClaim {
 	}
 	public void SetTotal() {
 		int length = ExpenseItem.CurrencyUnit.values().length;
-		this.total = new Float[length];
+		this.total = new int[length];
 		for (ExpenseItem item : items) {
 			total[item.getCurrency().ordinal()] += item.getAmount();
 		}
@@ -70,21 +80,17 @@ public class TravelClaim {
 	 * @uml.property  name="total"
 	 */
 	public String getTotal() { //String
-		String curr = "";
+		this.SetTotal();
+		String curr = "Total: ";
 		CurrencyUnit[] currencies = ExpenseItem.CurrencyUnit.values();
 		for (int i=0;i<ExpenseItem.CurrencyUnit.values().length;i++) {
-<<<<<<< HEAD
-			Float price = this.items.get(i).getAmount();
-			curr += ExpenseItem.CurrencyUnit.values()[i] + ":" + price.toString() + " ";
-=======
 			//ExpenseItem item = this.items.get(i);
-			Float price = total[i];
+			int price = total[i];
 			if (price == 0) {
 				continue;
 			}
 			curr += currencies[i];
 			curr += ": " + price + " ";
->>>>>>> a3c7027b8a8c72bc0f42addbb59e28e4b6980b1c
 		}
 		return curr;
 	}
@@ -144,6 +150,14 @@ public class TravelClaim {
 
 	public void setStatus(Status status) {
 		this.status = status;
+	}
+
+	public Date getEnd() {
+		return end;
+	}
+
+	public void setEnd(Date end) {
+		this.end = end;
 	}
 
 

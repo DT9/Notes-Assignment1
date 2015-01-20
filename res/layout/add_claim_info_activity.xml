@@ -14,52 +14,21 @@
         android:layout_height="wrap_content"
         android:text="Status" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="41dp"
-        android:text="Date" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_marginTop="48dp"
-        android:text="Description" />
-
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:onClick="saveClaimInfo"
         android:text="Save" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/claimDesc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textView2"
-        android:layout_alignBottom="@+id/textView2"
-        android:layout_toRightOf="@+id/textView2"
-        android:ems="10"
-        android:inputType="date" />
-
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/textView3" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/spinner1"
+        android:layout_alignLeft="@+id/claimStatus"
         android:layout_alignTop="@+id/textView3"
         android:layout_marginLeft="22dp"
         android:ems="10"
@@ -67,5 +36,56 @@
 
         <requestFocus />
     </EditText>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/claimDate"
+        android:layout_marginTop="82dp"
+        android:text="Description" />
+
+    <EditText
+        android:id="@+id/claimEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/claimDate"
+        android:layout_toRightOf="@+id/textView3"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Spinner
+        android:id="@+id/claimStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/claimDate"
+        android:layout_alignParentTop="true" />
+
+    <EditText
+        android:id="@+id/claimDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/claimStatus"
+        android:layout_toRightOf="@+id/DateStart"
+        android:ems="10"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/DateStart"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:text="Start Date" />
+
+    <Button
+        android:id="@+id/button2"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/DateStart"
+        android:layout_alignTop="@+id/claimEnd"
+        android:text="EndDate" />
 
 </RelativeLayout>

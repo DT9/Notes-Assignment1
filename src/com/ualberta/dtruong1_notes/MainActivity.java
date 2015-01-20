@@ -15,12 +15,19 @@ limitations under the License.
 package com.ualberta.dtruong1_notes;
 
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
@@ -28,7 +35,36 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);    
+        ArrayList<TravelClaim> claimlist = ClaimListController.getClaimList();
+        final ArrayList<TravelClaim> cll = new ArrayList<TravelClaim>(claimlist);
+        ListView claims = (ListView) findViewById(R.id.listView1);
+        final ArrayAdapter<TravelClaim> claimAdapter = new ArrayAdapter<TravelClaim>(this, android.R.layout.simple_list_item_1,cll);
+        claims.setAdapter(claimAdapter);
+        
+        
+        ClaimListController.addListener(new Listener() {
+        	@Override
+        	public void update() {
+        		cll.clear();
+        		ArrayList<TravelClaim> newList = ClaimListController.getClaimList();
+        		cll.addAll(newList);
+        		claimAdapter.notifyDataSetChanged();
+        	}
+        });
+    	
+        claims.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+			@Override
+			public boolean onItemLongClick(AdapterView<?> adapterview, View view,
+					int position, long id) {
+				
+				TravelClaim claim = cll.get(position);
+				ClaimListController.removeClaim(claim);
+				return false;
+			}
+		});
+        
     }
 
 

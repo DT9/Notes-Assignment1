@@ -6,7 +6,6 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="@color/white"
     tools:context=".MainActivity" >
 
     <Button
@@ -19,22 +18,13 @@
         android:onClick="addClaimItem"
         android:text="@string/add_claim" />
 
-    <TextView
-        android:id="@+id/claimcurrency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/expense_title"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/expense_title"
-        android:text="@string/currencies" />
-
     <ListView
         android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/addExpenseButton"
         android:layout_alignParentLeft="true"
-        android:layout_below="@+id/claimcurrency" >
+        android:layout_below="@+id/expense_title" >
 
     </ListView>
 
