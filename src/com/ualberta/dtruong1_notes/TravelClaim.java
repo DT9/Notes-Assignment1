@@ -14,7 +14,7 @@ import com.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;
 /**
  * @author  Dennis
  */
-public class TravelClaim {
+public class TravelClaim implements Comparable<TravelClaim>{
 	
 	/**
 	 * @author  dtruong1
@@ -48,6 +48,10 @@ public class TravelClaim {
 	/**
 	 * 
 	 */
+	@Override
+	public int compareTo(TravelClaim o) {
+		return getDate().compareTo(o.getDate());
+	}
 	public TravelClaim(Status status,Date date,Date end, String text) {
 		// TODO Auto-generated constructor stub
 		this.setStatus(status);
@@ -60,7 +64,14 @@ public class TravelClaim {
 		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		String claim = status.toString() + "\n" + formatter.format(date) + " to " + formatter.format(end) + "\n" + getTotal() ;
 		return claim;
-
+	}
+	public String emailBody() {
+		String body = "";
+		for (ExpenseItem item: items) {
+			body += item.toString() + "\n";
+		}
+		
+		return body;
 	}
 	public void addItem(ExpenseItem item){
 		this.items.add(item);

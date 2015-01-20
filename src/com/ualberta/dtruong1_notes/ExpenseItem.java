@@ -1,5 +1,7 @@
 package com.ualberta.dtruong1_notes;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -13,7 +15,7 @@ public class ExpenseItem {
 	 */
 	private Category category;
 	private String text;
-	private Float amount;
+	private int amount;
 	/**
 	 * @uml.property  name="currency"
 	 * @uml.associationEnd  
@@ -82,7 +84,7 @@ public class ExpenseItem {
 		meal;
 	}
 
-	public ExpenseItem(Date date, Category category, String text, Float amount,CurrencyUnit currency) {
+	public ExpenseItem(Date date, Category category, String text, int amount,CurrencyUnit currency) {
 		// TODO Auto-generated constructor stub
 		this.date = date;
 		this.category = category;
@@ -91,6 +93,11 @@ public class ExpenseItem {
 		this.currency = currency;
 	}
 
+	public String toString() {
+		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
+		String text =  formatter.format(date) +"-"+ category.toString() +"\n"+this.text+"\nAmount: " + amount + " " + currency.toString(); 
+		return text;
+	}
 	/**
 	 * @return  the amount
 	 * @uml.property  name="amount"
@@ -103,7 +110,7 @@ public class ExpenseItem {
 	 * @param amount  the amount to set
 	 * @uml.property  name="amount"
 	 */
-	public void setAmount(float amount) {
+	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 

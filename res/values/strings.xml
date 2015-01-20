@@ -13,11 +13,22 @@
     <string name="add_expense">Add Expense Item</string>
     <string name="title_activity_list_expense">Expenses</string>
     <string name="title_activity_add_claim_info">Claim Information</string>
-<string-array name="status_array">
+
+    <string-array name="status_array">
         <item>inprogress</item>
         <item>submitted</item>
         <item>returned</item>
         <item>approved</item>
     </string-array>
-    
+
+    <string name="long_click_claim">Claim Info</string>
+
+    <string-array name="claim_long_array">
+        <item>Edit</item>
+        <item>Email</item>
+        <item>Delete</item>
+    </string-array>
+
+    <string name="title_activity_edit_claim_info">EditClaimInfo</string>
+
 </resources>

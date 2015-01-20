@@ -30,6 +30,10 @@
             android:name="com.ualberta.dtruong1_notes.AddClaimInfo"
             android:label="@string/title_activity_add_claim_info" >
         </activity>
+        <activity
+            android:name="com.ualberta.dtruong1_notes.EditClaimInfo"
+            android:label="@string/title_activity_edit_claim_info" >
+        </activity>
     </application>
 
 </manifest>
