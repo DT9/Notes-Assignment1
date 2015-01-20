@@ -5,7 +5,7 @@ import android.app.Activity;
 import android.view.Menu;
 
 public class ListExpenseActivity extends Activity {
-
+	ExpenseItem editableExpense;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,19 +57,7 @@ public class ListExpenseActivity extends Activity {
             		   startActivity(edits);
             		   
             		   break;
-            	   case 1: //email
-            		   Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-            		            "mailto","myemail@gmail.com", null));
-            		   String body = claim.toString() + claim.emailBody();
-            		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Claims");
-            		emailIntent.putExtra(Intent.EXTRA_TEXT,body);
-            		try {
-            		    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-            		} catch (android.content.ActivityNotFoundException ex) {
-            		    Toast.makeText(MainActivity.this, "There are no email clients installed or enabled", Toast.LENGTH_SHORT).show();
-            		}
-            		   break;
-            	   case 2: //delete
+            	   case 1: //delete
        					ClaimListController.removeClaim(claim);
             		   break;
             	   default:
