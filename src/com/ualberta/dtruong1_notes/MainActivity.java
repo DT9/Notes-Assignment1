@@ -67,6 +67,7 @@ public class MainActivity extends Activity {
 				// TODO Auto-generated method stub
 				final int pos = position;
 				Intent intent = new Intent(MainActivity.this, ListExpenseActivity.class);
+				editableClaim = cll.get(pos);
 				startActivity(intent);
 			}
 		});
