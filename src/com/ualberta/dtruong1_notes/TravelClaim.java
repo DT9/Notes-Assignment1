@@ -44,7 +44,7 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	private Date date;
 	private Date end;
 	private String text;
-	private List<ExpenseItem> items = new ArrayList<ExpenseItem>();
+	private static ArrayList<ExpenseItem> items = new ArrayList<ExpenseItem>();
 	/**
 	 * 
 	 */
@@ -76,8 +76,12 @@ public class TravelClaim implements Comparable<TravelClaim>{
 	public void addItem(ExpenseItem item){
 		this.items.add(item);
 	}
-	public void removeItem(int location) {
-		this.items.remove(location);
+	public void removeItem(ExpenseItem expense) {
+		this.items.remove(expense);
+	}
+	
+	public static ArrayList<ExpenseItem> getItems(){
+		return items;
 	}
 	public void SetTotal() {
 		int length = ExpenseItem.CurrencyUnit.values().length;
