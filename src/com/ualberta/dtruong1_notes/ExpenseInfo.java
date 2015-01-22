@@ -55,7 +55,7 @@ public class ExpenseInfo extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.claim_info, menu);
+		getMenuInflater().inflate(R.menu.list_expense, menu);
 		return true;
 	}
 	
@@ -70,18 +70,17 @@ public class ExpenseInfo extends Activity {
 			edit.setText(description.getText().toString());
 			edit.setDate(format.parse(date.getText().toString()));
 			ListExpenseActivity.editableExpense = null;
-			//onBackPressed();
-			ListExpenseActivity.expenseAdapter.notifyDataSetChanged();
+			onBackPressed();
 			MainActivity.claimAdapter.notifyDataSetChanged();
-			finish();
+			
+			return;
 		}
 		TravelClaim claim = MainActivity.editableClaim;
 		claim.addItem(new ExpenseItem(format.parse(date.getText().toString()),Category.valueOf(category.getSelectedItem().toString()), description.getText().toString(), Integer.parseInt(amount.getText().toString()),CurrencyUnit.valueOf(currency.getSelectedItem().toString())));
-		ListExpenseActivity.expenseAdapter.notifyDataSetChanged();
 		MainActivity.claimAdapter.notifyDataSetChanged();
 
-		finish();
-		//onBackPressed();
+		
+		onBackPressed();
 	}
 	
 }

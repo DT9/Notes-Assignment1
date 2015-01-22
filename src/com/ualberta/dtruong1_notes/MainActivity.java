@@ -43,90 +43,94 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);    
-        ArrayList<TravelClaim> claimlist = ClaimListController.getClaimList();
-        final ArrayList<TravelClaim> cll = new ArrayList<TravelClaim>(claimlist);
-        ListView claims = (ListView) findViewById(R.id.listView1);
-        claimAdapter = new ArrayAdapter<TravelClaim>(this, android.R.layout.simple_list_item_1,cll);
-        claims.setAdapter(claimAdapter);
-        
-        
-        ClaimListController.addListener(new Listener() {
-        	@Override
-        	public void update() {
-        		cll.clear();
-        		ArrayList<TravelClaim> newList = ClaimListController.getClaimList();
-        		cll.addAll(newList);
-        		claimAdapter.notifyDataSetChanged();
-        	}
-        });
-    	
-        claims.setOnItemClickListener(new OnItemClickListener() {
-
-			@Override
-			public void onItemClick(AdapterView<?> adapterview, View view, int position,
-					long id) {
-				// TODO Auto-generated method stub
-				final int pos = position;
-				Intent intent = new Intent(MainActivity.this, ListExpenseActivity.class);
-				editableClaim = cll.get(pos);
-				startActivity(intent);
-			}
-		});
-        
-        claims.setOnItemLongClickListener(new OnItemLongClickListener() {
-
-			@Override
-			public boolean onItemLongClick(AdapterView<?> adapterview, View view,
-					int position, long id) {
-				final int pos = position;
-			    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-			    builder.setCancelable(true);
-			    builder.setTitle(R.string.long_click_claim)
-		           .setItems(R.array.claim_long_array, new DialogInterface.OnClickListener() {
-		               public void onClick(DialogInterface dialog, int which) {
-		               // The 'which' argument contains the index position
-		               // of the selected item
-		            	   TravelClaim claim = cll.get(pos);
-
-		            	   switch(which) {
-		            	   case 0:	//edit
-		            		   if (claim.getStatus() == Status.approved || Status.submitted == claim.getStatus()) {
-			            		    Toast.makeText(MainActivity.this, claim.getStatus().toString() + ": No further edits can be made!", Toast.LENGTH_SHORT).show();
-		            			   break;
-		            		   }
-		            		   Intent edits = new Intent(MainActivity.this, EditClaimInfo.class);
-		            		   editableClaim = claim;
-		            		   startActivity(edits);
-		            		   
-		            		   break;
-		            	   case 1: //email
-		            		   Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-		            		            "mailto","myemail@gmail.com", null));
-		            		   String body = claim.toString() + claim.emailBody();
-		            		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Claims");
-		            		emailIntent.putExtra(Intent.EXTRA_TEXT,body);
-		            		try {
-		            		    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-		            		} catch (android.content.ActivityNotFoundException ex) {
-		            		    Toast.makeText(MainActivity.this, "There are no email clients installed or enabled", Toast.LENGTH_SHORT).show();
-		            		}
-		            		   break;
-		            	   case 2: //delete
-		       					ClaimListController.removeClaim(claim);
-		            		   break;
-		            	   default:
-		            		   break;
-		            	   }
-		           }
-		    });
-			    
-			    builder.show();
-				return false;
-			}
-		});
-        
+               
     }
+    
+    public void onStart() {
+    	super.onStart();
+    	 ArrayList<TravelClaim> claimlist = ClaimListController.getClaimList();
+         final ArrayList<TravelClaim> cll = new ArrayList<TravelClaim>(claimlist);
+         ListView claims = (ListView) findViewById(R.id.listView1);
+         claimAdapter = new ArrayAdapter<TravelClaim>(this, android.R.layout.simple_list_item_1,cll);
+         claims.setAdapter(claimAdapter);
+         
+         
+         ClaimListController.addListener(new Listener() {
+         	@Override
+         	public void update() {
+         		cll.clear();
+         		cll.addAll(ClaimListController.getClaimList());
+         		claimAdapter.notifyDataSetChanged();
+         	}
+         });
+     	
+         claims.setOnItemClickListener(new OnItemClickListener() {
 
+ 			@Override
+ 			public void onItemClick(AdapterView<?> adapterview, View view, int position,
+ 					long id) {
+ 				// TODO Auto-generated method stub
+ 				final int pos = position;
+ 				Intent intent = new Intent(MainActivity.this, ListExpenseActivity.class);
+ 				editableClaim = ClaimListController.getItem(pos);
+ 				//for (TravelClaim claim: ClaimListController)
+ 		    	//Toast.makeText(MainActivity.this,"" , Toast.LENGTH_LONG).show();
+ 				startActivity(intent);
+ 			}
+ 		});
+         
+         claims.setOnItemLongClickListener(new OnItemLongClickListener() {
+
+ 			@Override
+ 			public boolean onItemLongClick(AdapterView<?> adapterview, View view,
+ 					int position, long id) {
+ 				final int pos = position;
+ 			    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+ 			    builder.setCancelable(true);
+ 			    builder.setTitle(R.string.long_click_claim)
+ 		           .setItems(R.array.claim_long_array, new DialogInterface.OnClickListener() {
+ 		               public void onClick(DialogInterface dialog, int which) {
+ 		               // The 'which' argument contains the index position
+ 		               // of the selected item
+ 		            	   TravelClaim claim = cll.get(pos);
+
+ 		            	   switch(which) {
+ 		            	   case 0:	//edit
+ 		            		   if (claim.getStatus() == Status.approved || Status.submitted == claim.getStatus()) {
+ 			            		    Toast.makeText(MainActivity.this, claim.getStatus().toString() + ": No further edits can be made!", Toast.LENGTH_SHORT).show();
+ 		            			   break;
+ 		            		   }
+ 		            		   Intent edits = new Intent(MainActivity.this, EditClaimInfo.class);
+ 		            		   editableClaim = claim;
+ 		            		   startActivity(edits);
+ 		            		   
+ 		            		   break;
+ 		            	   case 1: //email
+ 		            		   Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+ 		            		            "mailto","myemail@gmail.com", null));
+ 		            		   String body = claim.toString() + claim.emailBody();
+ 		            		emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Claims");
+ 		            		emailIntent.putExtra(Intent.EXTRA_TEXT,body);
+ 		            		try {
+ 		            		    startActivity(Intent.createChooser(emailIntent, "Send mail..."));
+ 		            		} catch (android.content.ActivityNotFoundException ex) {
+ 		            		    Toast.makeText(MainActivity.this, "There are no email clients installed or enabled", Toast.LENGTH_SHORT).show();
+ 		            		}
+ 		            		   break;
+ 		            	   case 2: //delete
+ 		       					ClaimListController.removeClaim(claim);
+ 		            		   break;
+ 		            	   default:
+ 		            		   break;
+ 		            	   }
+ 		           }
+ 		    });
+ 			    
+ 			    builder.show();
+ 				return false;
+ 			}
+ 		});
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -137,7 +141,7 @@ public class MainActivity extends Activity {
     
     
     public void addClaimItem(View v) {
-    	Toast.makeText(this, "add claim", Toast.LENGTH_LONG).show();
+    	//Toast.makeText(this, "add claim", Toast.LENGTH_LONG).show();
     	Intent intent = new Intent(MainActivity.this, AddClaimInfo.class);
     	startActivity(intent);
     	

@@ -36,9 +36,7 @@ public class ListExpenseActivity extends Activity {
         	expenseAdapter = new ArrayAdapter<ExpenseItem>(this, android.R.layout.simple_list_item_1,cll);
         	expenses.setAdapter(expenseAdapter);
         	
-        	
-        	
-        	
+        	/*
 	        expenses.setOnItemClickListener(new OnItemClickListener() {
 		@Override
 		public void onItemClick(AdapterView<?> adapterview, View view, int position,
@@ -49,7 +47,7 @@ public class ListExpenseActivity extends Activity {
 			editableExpense = cll.get(pos);
 			startActivity(intent);
 		}
-	});
+	});*/
 	
         expenses.setOnItemLongClickListener(new OnItemLongClickListener() {
 
@@ -79,6 +77,7 @@ public class ListExpenseActivity extends Activity {
             		   break;
             	   case 1: //delete
             		   MainActivity.editableClaim.removeItem(expense);
+            		   onResume();
             		   break;
             	   default:
             		   break;
@@ -94,13 +93,15 @@ public class ListExpenseActivity extends Activity {
 
 	public void onResume() {
 		super.onResume();
-    	Toast.makeText(this, "ON RESUME!", Toast.LENGTH_LONG).show();
+    	//Toast.makeText(this, "ON RESUME!ex", Toast.LENGTH_LONG).show();
+    	expenseAdapter.clear();
+    	expenseAdapter.addAll(MainActivity.editableClaim.getItems());
     	expenseAdapter.notifyDataSetChanged();
 
 	}
 	public void onStart() {
 		super.onStart();
-    	Toast.makeText(this, "ON Start!", Toast.LENGTH_LONG).show();
+    	//Toast.makeText(this, "ON Start!", Toast.LENGTH_LONG).show();
 		TextView total = (TextView) findViewById(R.id.claimcurrency);
 		total.setText(MainActivity.editableClaim.getTotal());
 	}
@@ -113,8 +114,9 @@ public class ListExpenseActivity extends Activity {
 	}
 
 	public void addExpenseItem(View v) {
-    	Toast.makeText(this, "add Expense", Toast.LENGTH_LONG).show();
+    	//Toast.makeText(this, "add Expense", Toast.LENGTH_LONG).show();
     	Intent intent = new Intent(ListExpenseActivity.this, ExpenseInfo.class);
+    	editableExpense = null;
     	startActivity(intent);
 
     	}

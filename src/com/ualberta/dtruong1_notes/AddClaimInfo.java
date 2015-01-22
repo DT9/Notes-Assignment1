@@ -58,7 +58,7 @@ public class AddClaimInfo extends Activity implements OnItemSelectedListener{
 		
 		
 		ClaimListController.addClaim(Status.valueOf(text), date, end, desc);
-		Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
+		//Toast.makeText(this, text, Toast.LENGTH_SHORT).show();
 		//viewStatus.setOnItemSelectedListener(this);
 		onBackPressed();
 	}

@@ -50,7 +50,7 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 	private Date date;
 	private Date end;
 	private String text;
-	private static ArrayList<ExpenseItem> items = new ArrayList<ExpenseItem>();
+	private ArrayList<ExpenseItem> items = new ArrayList<ExpenseItem>();
 	/**
 	 * 
 	 */
@@ -90,7 +90,7 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 		this.items.remove(expense);
 	}
 	
-	public static ArrayList<ExpenseItem> getItems(){
+	public ArrayList<ExpenseItem> getItems(){
 		return items;
 	}
 	public void SetTotal() {

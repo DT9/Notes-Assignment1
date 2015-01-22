@@ -69,4 +69,8 @@ public class ClaimListController implements Serializable {
 	public static void removeListener(Listener l) {
 		listeners.remove(l);
 	}
+	public static TravelClaim getItem(int pos) {
+		// TODO Auto-generated method stub
+		return claimlist.get(pos);
+	}
 }
