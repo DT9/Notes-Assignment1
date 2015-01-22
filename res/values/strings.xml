@@ -28,7 +28,11 @@
         <item>Email</item>
         <item>Delete</item>
     </string-array>
-
+   <string-array name="expense_long_array">
+        <item>Edit</item>
+        <item>Delete</item>
+    </string-array>
     <string name="title_activity_edit_claim_info">EditClaimInfo</string>
+    <string name="title_activity_claim_info">ClaimInfo</string>
 
 </resources>

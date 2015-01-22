@@ -38,6 +38,7 @@ import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	static public TravelClaim editableClaim;
+	static ArrayAdapter<TravelClaim> claimAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,7 +46,7 @@ public class MainActivity extends Activity {
         ArrayList<TravelClaim> claimlist = ClaimListController.getClaimList();
         final ArrayList<TravelClaim> cll = new ArrayList<TravelClaim>(claimlist);
         ListView claims = (ListView) findViewById(R.id.listView1);
-        final ArrayAdapter<TravelClaim> claimAdapter = new ArrayAdapter<TravelClaim>(this, android.R.layout.simple_list_item_1,cll);
+        claimAdapter = new ArrayAdapter<TravelClaim>(this, android.R.layout.simple_list_item_1,cll);
         claims.setAdapter(claimAdapter);
         
         

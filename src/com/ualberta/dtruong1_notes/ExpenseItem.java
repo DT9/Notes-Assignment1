@@ -20,7 +20,7 @@ public class ExpenseItem implements Serializable{
 	 */
 	private Category category;
 	private String text;
-	private int amount;
+	private int amount = 0;
 	/**
 	 * @uml.property  name="currency"
 	 * @uml.associationEnd  
@@ -58,35 +58,42 @@ public class ExpenseItem implements Serializable{
 		 * @uml.property  name="airfare"
 		 * @uml.associationEnd  
 		 */
-		airfare, /**
+		airfare("airfare"), /**
 		 * @uml.property  name="groundtransport"
 		 * @uml.associationEnd  
 		 */
-		groundtransport, /**
+		groundtransport("groundtransport"), /**
 		 * @uml.property  name="vehiclerental"
 		 * @uml.associationEnd  
 		 */
-		vehiclerental, /**
+		vehiclerental("vehiclerental"), /**
 		 * @uml.property  name="fuel"
 		 * @uml.associationEnd  
 		 */
-		fuel, /**
+		fuel("fuel"), /**
 		 * @uml.property  name="parking"
 		 * @uml.associationEnd  
 		 */
-		parking, /**
+		parking("parking"), /**
 		 * @uml.property  name="registration"
 		 * @uml.associationEnd  
 		 */
-		registration, /**
+		registration("registration"), /**
 		 * @uml.property  name="accommodation"
 		 * @uml.associationEnd  
 		 */
-		accommodation, /**
+		accommodation("accommodation"), /**
 		 * @uml.property  name="meal"
 		 * @uml.associationEnd  
 		 */
-		meal;
+		meal("meal");
+		private String cate;
+		Category(String cates) {
+			cate = cates;
+		}
+		@Override public String toString() {
+			return cate;
+		}
 	}
 
 	public ExpenseItem(Date date, Category category, String text, int amount,CurrencyUnit currency) {
@@ -107,7 +114,7 @@ public class ExpenseItem implements Serializable{
 	 * @return  the amount
 	 * @uml.property  name="amount"
 	 */
-	public float getAmount() {
+	public int getAmount() {
 		return amount;
 	}
 
@@ -181,6 +188,16 @@ public class ExpenseItem implements Serializable{
 	 */
 	public void setDate(Date date) {
 		this.date = date;
+	}
+
+	public void setCategory(String pos) {
+		// TODO Auto-generated method stub
+		this.category = Category.valueOf(pos);
+	}
+
+	public void setCurrency(String string) {
+		// TODO Auto-generated method stub
+		this.currency = CurrencyUnit.valueOf(string);
 	}
 
 }

@@ -11,6 +11,7 @@ public final class R {
     public static final class array {
         public static final int claim_long_array=0x7f070002;
         public static final int currencies=0x7f070000;
+        public static final int expense_long_array=0x7f070003;
         public static final int status_array=0x7f070001;
     }
     public static final class attr {
@@ -33,33 +34,43 @@ public final class R {
     }
     public static final class id {
         public static final int DateStart=0x7f0a0007;
-        public static final int EmailPeople=0x7f0a000f;
-        public static final int action_settings=0x7f0a000e;
-        public static final int addExpenseButton=0x7f0a0009;
+        public static final int EmailPeople=0x7f0a0017;
+        public static final int action_settings=0x7f0a0016;
+        public static final int addExpenseButton=0x7f0a0011;
         public static final int button1=0x7f0a0001;
         public static final int button2=0x7f0a0008;
         public static final int claimDate=0x7f0a0005;
         public static final int claimDesc=0x7f0a0002;
         public static final int claimEnd=0x7f0a0006;
         public static final int claimStatus=0x7f0a0003;
-        public static final int claimcurrency=0x7f0a000c;
-        public static final int expense_list=0x7f0a000d;
-        public static final int expense_title=0x7f0a000b;
-        public static final int listView1=0x7f0a000a;
+        public static final int claimcurrency=0x7f0a0014;
+        public static final int editTextAmount=0x7f0a000c;
+        public static final int editTextDate=0x7f0a0009;
+        public static final int editTextDescription=0x7f0a0010;
+        public static final int expense_list=0x7f0a0015;
+        public static final int expense_title=0x7f0a0013;
+        public static final int listView1=0x7f0a0012;
+        public static final int spinnerCategory=0x7f0a000a;
+        public static final int spinnerCurrency=0x7f0a000e;
         public static final int textView1=0x7f0a0000;
+        public static final int textView2=0x7f0a000b;
         public static final int textView3=0x7f0a0004;
+        public static final int textView4=0x7f0a000d;
+        public static final int textView5=0x7f0a000f;
     }
     public static final class layout {
         public static final int activity_edit_claim_info=0x7f030000;
-        public static final int activity_main=0x7f030001;
-        public static final int add_claim_info_activity=0x7f030002;
-        public static final int list_expenses=0x7f030003;
+        public static final int activity_expense_info=0x7f030001;
+        public static final int activity_main=0x7f030002;
+        public static final int add_claim_info_activity=0x7f030003;
+        public static final int list_expenses=0x7f030004;
     }
     public static final class menu {
         public static final int add_claim_info=0x7f090000;
-        public static final int edit_claim_info=0x7f090001;
-        public static final int list_expense=0x7f090002;
-        public static final int main=0x7f090003;
+        public static final int claim_info=0x7f090001;
+        public static final int edit_claim_info=0x7f090002;
+        public static final int list_expense=0x7f090003;
+        public static final int main=0x7f090004;
     }
     public static final class string {
         public static final int ExpenseItem=0x7f060005;
@@ -71,6 +82,7 @@ public final class R {
         public static final int hello_world=0x7f060002;
         public static final int long_click_claim=0x7f060009;
         public static final int title_activity_add_claim_info=0x7f060008;
+        public static final int title_activity_claim_info=0x7f06000b;
         public static final int title_activity_edit_claim_info=0x7f06000a;
         public static final int title_activity_list_expense=0x7f060007;
     }
