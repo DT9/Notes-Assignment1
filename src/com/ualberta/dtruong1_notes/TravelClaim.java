@@ -3,24 +3,19 @@
  */
 package com.ualberta.dtruong1_notes;
 
-import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import com.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;
+import java.util.Collection;
 
 /**
  * @author Dennis
+ * Travel claim structure
  */
-public class TravelClaim implements Comparable<TravelClaim>, Serializable {
-
-	/**
-	 * travelclaim id
-	 */
-	private static final long serialVersionUID = 3695701892336777254L;
+public class TravelClaim implements Comparable<TravelClaim> {
 
 	/**
 	 * @author dtruong1
@@ -83,6 +78,7 @@ public class TravelClaim implements Comparable<TravelClaim>, Serializable {
 	}
 
 
+	@Override
 	public String toString() {
 		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		String claim = status.toString() + "\n" + formatter.format(date)
@@ -229,6 +225,54 @@ public class TravelClaim implements Comparable<TravelClaim>, Serializable {
 	 */
 	public void setEnd(Date end) {
 		this.end = end;
+	}
+
+	/** 
+	 * @uml.property name="expenseItem"
+	 * @uml.associationEnd multiplicity="(0 -1)" dimension="1" ordering="true" aggregation="shared" inverse="travelClaim:com.ualberta.dtruong1_notes.ExpenseItem"
+	 */
+	private ExpenseItem[] expenseItem;
+
+	/** 
+	 * Getter of the property <tt>expenseItem</tt>
+	 * @return  Returns the expenseItem.
+	 * @uml.property  name="expenseItem"
+	 */
+	public ExpenseItem[] getExpenseItem() {
+		return expenseItem;
+	}
+
+	/** 
+	 * Setter of the property <tt>expenseItem</tt>
+	 * @param expenseItem  The expenseItem to set.
+	 * @uml.property  name="expenseItem"
+	 */
+	public void setExpenseItem(ExpenseItem[] expenseItem) {
+		this.expenseItem = expenseItem;
+	}
+
+	/** 
+	 * @uml.property name="claimListController"
+	 * @uml.associationEnd inverse="travelClaim:com.ualberta.dtruong1_notes.ClaimListController"
+	 */
+	private ClaimListController claimListController;
+
+	/** 
+	 * Getter of the property <tt>claimListController</tt>
+	 * @return  Returns the claimListController.
+	 * @uml.property  name="claimListController"
+	 */
+	public ClaimListController getClaimListController() {
+		return claimListController;
+	}
+
+	/** 
+	 * Setter of the property <tt>claimListController</tt>
+	 * @param claimListController  The claimListController to set.
+	 * @uml.property  name="claimListController"
+	 */
+	public void setClaimListController(ClaimListController claimListController) {
+		this.claimListController = claimListController;
 	}
 
 }

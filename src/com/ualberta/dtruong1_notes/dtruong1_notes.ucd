@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<editmodel:ClassDiagramEditModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:editmodel="editmodel.xmi" xmlns:options="options.xmi" name="dtruong1_notes" size="1328,1661" id="com.ualberta.dtruong1_notes" metadata="uml2-1.0" initialized="true" scrolledY="1006" tag="1000" key="32303037303533312D3130303020447472756F6E67312D6E6F7465732F647472756F6E6731">
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.5/@sourceConnections.0 //@children.1/@sourceConnections.0" name="ClaimListController" location="15,939" size="177,211" id="com.ualberta.dtruong1_notes/ClaimListController" runTimeClassModel="editClaim(Lcom.ualberta.dtruong1_notes.TravelClaim;Lcom.ualberta.dtruong1_notes.TravelClaim.Status;Ljava.util.Date;Ljava.util.Date;Ljava.lang.String;),addListener(Lcom.ualberta.dtruong1_notes.Listener;),contains(Lcom.ualberta.dtruong1_notes.TravelClaim;),getClaimList(),getItem(I),addClaim(Lcom.ualberta.dtruong1_notes.TravelClaim.Status;Ljava.util.Date;Ljava.util.Date;Ljava.lang.String;),removeListener(Lcom.ualberta.dtruong1_notes.Listener;),removeClaim(Lcom.ualberta.dtruong1_notes.TravelClaim;),notifyListeners()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="105,162">
+      <children xsi:type="editmodel:MethodEditModel" name="addClaim" id="com.ualberta.dtruong1_notes/ClaimListController#addClaim(Lcom.ualberta.dtruong1_notes.TravelClaim.Status;Ljava.util.Date;Ljava.util.Date;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addListener" id="com.ualberta.dtruong1_notes/ClaimListController#addListener(Lcom.ualberta.dtruong1_notes.Listener;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="contains" id="com.ualberta.dtruong1_notes/ClaimListController#contains(Lcom.ualberta.dtruong1_notes.TravelClaim;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="editClaim" id="com.ualberta.dtruong1_notes/ClaimListController#editClaim(Lcom.ualberta.dtruong1_notes.TravelClaim;Lcom.ualberta.dtruong1_notes.TravelClaim.Status;Ljava.util.Date;Ljava.util.Date;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getClaimList" id="com.ualberta.dtruong1_notes/ClaimListController#getClaimList()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getItem" id="com.ualberta.dtruong1_notes/ClaimListController#getItem(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="notifyListeners" id="com.ualberta.dtruong1_notes/ClaimListController#notifyListeners()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeClaim" id="com.ualberta.dtruong1_notes/ClaimListController#removeClaim(Lcom.ualberta.dtruong1_notes.TravelClaim;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeListener" id="com.ualberta.dtruong1_notes/ClaimListController#removeListener(Lcom.ualberta.dtruong1_notes.Listener;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/ClaimListController-Standard::Call->com.ualberta.dtruong1_notes/Listener*com.ualberta.dtruong1_notes/ClaimListController-Soyatec::Import->com.ualberta.dtruong1_notes/Listener" source="//@children.0" target="//@children.7" targetEnd="//@children.0/@sourceConnections.0/@children.2" label="//@children.0/@sourceConnections.0/@children.0" sourceEnd="//@children.0/@sourceConnections.0/@children.1" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Import, Call»" size="69,12" anchorKind="MiddlePart"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="80,211" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="50,0"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="MainActivity" location="56,645" size="161,157" id="com.ualberta.dtruong1_notes/MainActivity" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),addClaimItem(Landroid.view.View;),onPause(),saveInFile(),onStart(),onResume()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,108">
+      <children xsi:type="editmodel:MethodEditModel" name="addClaimItem" id="com.ualberta.dtruong1_notes/MainActivity#addClaimItem(Landroid.view.View;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="com.ualberta.dtruong1_notes/MainActivity#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onPause" id="com.ualberta.dtruong1_notes/MainActivity#onPause()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onResume" id="com.ualberta.dtruong1_notes/MainActivity#onResume()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onStart" id="com.ualberta.dtruong1_notes/MainActivity#onStart()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveInFile" id="com.ualberta.dtruong1_notes/MainActivity#saveInFile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/MainActivity-Standard::Call->com.ualberta.dtruong1_notes/ClaimListController*com.ualberta.dtruong1_notes/MainActivity-Soyatec::Access->com.ualberta.dtruong1_notes/ClaimListController" source="//@children.1" target="//@children.0" targetEnd="//@children.1/@sourceConnections.0/@children.1" label="//@children.1/@sourceConnections.0/@children.2" sourceEnd="//@children.1/@sourceConnections.0/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="67,157" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="108,0"/>
+      <children xsi:type="editmodel:WireLabelEditModel" name="«Call, Access»" size="71,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/MainActivity->com.ualberta.dtruong1_notes/ListExpenseActivity" source="//@children.1" target="//@children.2" targetEnd="//@children.1/@sourceConnections.1/@children.1" label="//@children.1/@sourceConnections.1/@children.2" sourceEnd="//@children.1/@sourceConnections.1/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="161,69" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,69"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/MainActivity->com.ualberta.dtruong1_notes/AddClaimInfo" source="//@children.1" target="//@children.8" targetEnd="//@children.1/@sourceConnections.2/@children.1" label="//@children.1/@sourceConnections.2/@children.2" sourceEnd="//@children.1/@sourceConnections.2/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="161,6" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="32,85"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/MainActivity->com.ualberta.dtruong1_notes/EditClaimInfo" source="//@children.1" target="//@children.3" targetEnd="//@children.1/@sourceConnections.3/@children.1" label="//@children.1/@sourceConnections.3/@children.2" sourceEnd="//@children.1/@sourceConnections.3/@children.0" connectionRouterKind="Manual">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="161,147" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="4,9"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.1" name="ListExpenseActivity" location="495,645" size="178,139" id="com.ualberta.dtruong1_notes/ListExpenseActivity" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),saveInFile(),onStart(),onResume(),addExpenseItem(Landroid.view.View;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,90">
+      <children xsi:type="editmodel:MethodEditModel" name="addExpenseItem" id="com.ualberta.dtruong1_notes/ListExpenseActivity#addExpenseItem(Landroid.view.View;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="com.ualberta.dtruong1_notes/ListExpenseActivity#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onResume" id="com.ualberta.dtruong1_notes/ListExpenseActivity#onResume()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onStart" id="com.ualberta.dtruong1_notes/ListExpenseActivity#onStart()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveInFile" id="com.ualberta.dtruong1_notes/ListExpenseActivity#saveInFile()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <sourceConnections xsi:type="editmodel:DependencyEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/ListExpenseActivity->com.ualberta.dtruong1_notes/ExpenseInfo" source="//@children.2" target="//@children.4" targetEnd="//@children.2/@sourceConnections.0/@children.1" label="//@children.2/@sourceConnections.0/@children.2" sourceEnd="//@children.2/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" location="178,14" attachSource="true"/>
+      <children xsi:type="editmodel:AssociationEndEditModel" location="0,89"/>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.3" name="EditClaimInfo" location="240,783" size="161,85" id="com.ualberta.dtruong1_notes/EditClaimInfo" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),EditClaimInfo(Landroid.view.View;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,36">
+      <children xsi:type="editmodel:MethodEditModel" name="EditClaimInfo" id="com.ualberta.dtruong1_notes/EditClaimInfo#EditClaimInfo(Landroid.view.View;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="com.ualberta.dtruong1_notes/EditClaimInfo#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.2/@sourceConnections.0" name="ExpenseInfo" location="705,570" size="161,103" id="com.ualberta.dtruong1_notes/ExpenseInfo" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),onSave(Landroid.view.View;),onStart()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,54">
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="com.ualberta.dtruong1_notes/ExpenseInfo#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onSave" id="com.ualberta.dtruong1_notes/ExpenseInfo#onSave(Landroid.view.View;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="onStart" id="com.ualberta.dtruong1_notes/ExpenseInfo#onStart()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.6/@sourceConnections.0" name="TravelClaim" location="375,900" size="195,418" id="com.ualberta.dtruong1_notes/TravelClaim" runTimeClassModel="total,text,addItem(Lcom.ualberta.dtruong1_notes.ExpenseItem;),com.ualberta.dtruong1_notes.TravelClaim.Status,date,TravelClaim(Lcom.ualberta.dtruong1_notes.TravelClaim.Status;Ljava.util.Date;Ljava.util.Date;Ljava.lang.String;),editable,toString(),SetTotal(),items,removeItem(Lcom.ualberta.dtruong1_notes.ExpenseItem;),compareTo(Lcom.ualberta.dtruong1_notes.TravelClaim;),end,emailBody()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="172,108">
+      <children xsi:type="editmodel:AttributeEditModel" name="date" id="com.ualberta.dtruong1_notes/TravelClaim#date"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="editable" id="com.ualberta.dtruong1_notes/TravelClaim#editable"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="end" id="com.ualberta.dtruong1_notes/TravelClaim#end"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="items" id="com.ualberta.dtruong1_notes/TravelClaim#items"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="text" id="com.ualberta.dtruong1_notes/TravelClaim#text"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="total" id="com.ualberta.dtruong1_notes/TravelClaim#total"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="88,126">
+      <children xsi:type="editmodel:MethodEditModel" name="SetTotal" id="com.ualberta.dtruong1_notes/TravelClaim#SetTotal()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="TravelClaim" id="com.ualberta.dtruong1_notes/TravelClaim#TravelClaim(Lcom.ualberta.dtruong1_notes.TravelClaim.Status;Ljava.util.Date;Ljava.util.Date;Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="addItem" id="com.ualberta.dtruong1_notes/TravelClaim#addItem(Lcom.ualberta.dtruong1_notes.ExpenseItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="compareTo" id="com.ualberta.dtruong1_notes/TravelClaim#compareTo(Lcom.ualberta.dtruong1_notes.TravelClaim;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="emailBody" id="com.ualberta.dtruong1_notes/TravelClaim#emailBody()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="removeItem" id="com.ualberta.dtruong1_notes/TravelClaim#removeItem(Lcom.ualberta.dtruong1_notes.ExpenseItem;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="com.ualberta.dtruong1_notes/TravelClaim#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="97,125">
+      <children xsi:type="editmodel:EnumerationEditModel" name="Status" location="3580,3043" size="97,123" id="com.ualberta.dtruong1_notes/TravelClaim$Status" runTimeClassModel="returned%,approved%,inprogress%,submitted%">
+        <children xsi:type="editmodel:CompartmentEditModel" size="70,72">
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="inprogress" id="com.ualberta.dtruong1_notes/TravelClaim$Status#inprogress%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="returned" id="com.ualberta.dtruong1_notes/TravelClaim$Status#returned%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="submitted" id="com.ualberta.dtruong1_notes/TravelClaim$Status#submitted%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="approved" id="com.ualberta.dtruong1_notes/TravelClaim$Status#approved%"/>
+        </children>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+      </children>
+    </children>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/ClaimListController@claimListController+com.ualberta.dtruong1_notes/TravelClaim@travelClaim" source="//@children.5" target="//@children.0" targetEnd="//@children.5/@sourceConnections.0/@children.1" label="//@children.5/@sourceConnections.0/@children.2" sourceEnd="//@children.5/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="travelClaim" location="0,144" id="com.ualberta.dtruong1_notes/ClaimListController@claimListController+com.ualberta.dtruong1_notes/TravelClaim@travelClaim|com.ualberta.dtruong1_notes/TravelClaim#travelClaim" attachSource="true" multiplicityLabel="//@children.5/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.0/@children.0" aggregationKind="Aggregration" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - travelClaim" location="303,1090" size="65,12" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="1..*" location="351,1064" size="17,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="claimListController" location="177,105" id="com.ualberta.dtruong1_notes/ClaimListController@claimListController+com.ualberta.dtruong1_notes/TravelClaim@travelClaim|com.ualberta.dtruong1_notes/ClaimListController#claimListController" multiplicityLabel="//@children.5/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.5/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - claimListController" location="199,1025" size="102,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="199,1051" size="18,12" anchorKind="LastPart"/>
+      </children>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" name="ExpenseItem" location="690,918" size="157,723" id="com.ualberta.dtruong1_notes/ExpenseItem" runTimeClassModel="setText(Ljava.lang.String;),text,getDate(),getCurrency(),setCategory(Ljava.lang.String;),getCategory(),setCategory(Lcom.ualberta.dtruong1_notes.ExpenseItem.Category;),ExpenseItem(Ljava.util.Date;Lcom.ualberta.dtruong1_notes.ExpenseItem.Category;Ljava.lang.String;ILcom.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;),getAmount(),date,getText(),setCurrency(Ljava.lang.String;),setDate(Ljava.util.Date;),currency,toString(),amount,category,com.ualberta.dtruong1_notes.ExpenseItem.Category,setCurrency(Lcom.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;),com.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit,setAmount(I)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="131,90">
+      <children xsi:type="editmodel:AttributeEditModel" name="amount" id="com.ualberta.dtruong1_notes/ExpenseItem#amount"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="category" id="com.ualberta.dtruong1_notes/ExpenseItem#category"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="currency" id="com.ualberta.dtruong1_notes/ExpenseItem#currency"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="date" id="com.ualberta.dtruong1_notes/ExpenseItem#date"/>
+      <children xsi:type="editmodel:AttributeEditModel" name="text" id="com.ualberta.dtruong1_notes/ExpenseItem#text"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="92,252">
+      <children xsi:type="editmodel:MethodEditModel" name="ExpenseItem" id="com.ualberta.dtruong1_notes/ExpenseItem#ExpenseItem(Ljava.util.Date;Lcom.ualberta.dtruong1_notes.ExpenseItem.Category;Ljava.lang.String;ILcom.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getAmount" id="com.ualberta.dtruong1_notes/ExpenseItem#getAmount()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCategory" id="com.ualberta.dtruong1_notes/ExpenseItem#getCategory()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getCurrency" id="com.ualberta.dtruong1_notes/ExpenseItem#getCurrency()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getDate" id="com.ualberta.dtruong1_notes/ExpenseItem#getDate()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="getText" id="com.ualberta.dtruong1_notes/ExpenseItem#getText()"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setAmount" id="com.ualberta.dtruong1_notes/ExpenseItem#setAmount(I)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCategory" id="com.ualberta.dtruong1_notes/ExpenseItem#setCategory(Lcom.ualberta.dtruong1_notes.ExpenseItem.Category;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCategory" id="com.ualberta.dtruong1_notes/ExpenseItem#setCategory(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCurrency" id="com.ualberta.dtruong1_notes/ExpenseItem#setCurrency(Lcom.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setCurrency" id="com.ualberta.dtruong1_notes/ExpenseItem#setCurrency(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setDate" id="com.ualberta.dtruong1_notes/ExpenseItem#setDate(Ljava.util.Date;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="setText" id="com.ualberta.dtruong1_notes/ExpenseItem#setText(Ljava.lang.String;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="toString" id="com.ualberta.dtruong1_notes/ExpenseItem#toString()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="134,322">
+      <children xsi:type="editmodel:EnumerationEditModel" name="Category" location="2833,4039" size="121,195" id="com.ualberta.dtruong1_notes/ExpenseItem$Category" runTimeClassModel="airfare%,fuel%,accommodation%,registration%,parking%,groundtransport%,meal%,vehiclerental%">
+        <children xsi:type="editmodel:CompartmentEditModel" size="98,144">
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="accommodation" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#accommodation%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="airfare" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#airfare%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="groundtransport" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#groundtransport%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="meal" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#meal%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="parking" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#parking%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="vehiclerental" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#vehiclerental%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="fuel" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#fuel%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="registration" id="com.ualberta.dtruong1_notes/ExpenseItem$Category#registration%"/>
+        </children>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+      </children>
+      <children xsi:type="editmodel:EnumerationEditModel" name="CurrencyUnit" location="2513,3430" size="134,123" id="com.ualberta.dtruong1_notes/ExpenseItem$CurrencyUnit" runTimeClassModel="USD%,GBP%,CAD%,EUR%">
+        <children xsi:type="editmodel:CompartmentEditModel" size="40,72">
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="CAD" id="com.ualberta.dtruong1_notes/ExpenseItem$CurrencyUnit#CAD%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="EUR" id="com.ualberta.dtruong1_notes/ExpenseItem$CurrencyUnit#EUR%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="USD" id="com.ualberta.dtruong1_notes/ExpenseItem$CurrencyUnit#USD%"/>
+          <children xsi:type="editmodel:EnumerationLiteralEditModel" name="GBP" id="com.ualberta.dtruong1_notes/ExpenseItem$CurrencyUnit#GBP%"/>
+        </children>
+        <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+      </children>
+    </children>
+    <sourceConnections xsi:type="editmodel:AssociationEditModel" autoLocated="true" id="com.ualberta.dtruong1_notes/TravelClaim@travelClaim+com.ualberta.dtruong1_notes/ExpenseItem@expenseItem" source="//@children.6" target="//@children.5" targetEnd="//@children.6/@sourceConnections.0/@children.1" label="//@children.6/@sourceConnections.0/@children.2" sourceEnd="//@children.6/@sourceConnections.0/@children.0" connectionRouterKind="Manhattan">
+      <children xsi:type="editmodel:AssociationEndEditModel" name="expenseItem" location="0,199" id="com.ualberta.dtruong1_notes/TravelClaim@travelClaim+com.ualberta.dtruong1_notes/ExpenseItem@expenseItem|com.ualberta.dtruong1_notes/ExpenseItem#expenseItem" attachSource="true" multiplicityLabel="//@children.6/@sourceConnections.0/@children.0/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.0/@children.0" aggregationKind="Aggregration" navigable="true" orderingKind="1">
+        <children xsi:type="editmodel:LabelEditModel" name=" - expenseItem" location="612,1119" size="71,12" anchorKind="FirstPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="*" location="678,1145" size="5,12" anchorKind="FirstPart"/>
+      </children>
+      <children xsi:type="editmodel:AssociationEndEditModel" name="travelClaim" location="195,217" id="com.ualberta.dtruong1_notes/TravelClaim@travelClaim+com.ualberta.dtruong1_notes/ExpenseItem@expenseItem|com.ualberta.dtruong1_notes/TravelClaim#travelClaim" multiplicityLabel="//@children.6/@sourceConnections.0/@children.1/@children.1" roleLabel="//@children.6/@sourceConnections.0/@children.1/@children.0" navigable="true">
+        <children xsi:type="editmodel:LabelEditModel" name=" - travelClaim" location="577,1163" size="65,12" anchorKind="LastPart"/>
+        <children xsi:type="editmodel:LabelEditModel" name="0..1" location="577,1137" size="18,12" anchorKind="LastPart"/>
+      </children>
+      <children xsi:type="editmodel:WireLabelEditModel" size="0,12" anchorKind="MiddlePart"/>
+    </sourceConnections>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:InterfaceEditModel" targetConnections="//@children.0/@sourceConnections.0" name="Listener" location="45,1200" size="101,79" id="com.ualberta.dtruong1_notes/Listener" runTimeClassModel="update()">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="64,18">
+      <children xsi:type="editmodel:MethodEditModel" name="update" id="com.ualberta.dtruong1_notes/Listener#update()"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:ClassEditModel" targetConnections="//@children.1/@sourceConnections.2" name="AddClaimInfo" location="270,491" size="161,85" id="com.ualberta.dtruong1_notes/AddClaimInfo" runTimeClassModel="onCreateOptionsMenu(Landroid.view.Menu;),saveClaimInfo(Landroid.view.View;)">
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <children xsi:type="editmodel:CompartmentEditModel" size="138,36">
+      <children xsi:type="editmodel:MethodEditModel" name="onCreateOptionsMenu" id="com.ualberta.dtruong1_notes/AddClaimInfo#onCreateOptionsMenu(Landroid.view.Menu;)"/>
+      <children xsi:type="editmodel:MethodEditModel" name="saveClaimInfo" id="com.ualberta.dtruong1_notes/AddClaimInfo#saveClaimInfo(Landroid.view.View;)"/>
+    </children>
+    <children xsi:type="editmodel:CompartmentEditModel" size="0,0"/>
+    <classifierPreferences xsi:type="editmodel:UMLClassDiagramClassifierPreference" showStereotype="true" attributeSorter="Natural" methodSorter="Natural" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+  </children>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="An activity that allows the user to input claim information and save" location="270,480" size="326,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Activity that edits previous claim information and save" location="241,810" size="265,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Activity that lists the expenses of a claim" location="484,630" size="200,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Activity that creates or edits a new expense" location="705,555" size="213,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="MainActivity where list of claims are shown and launches edit, add, email or delete on a claim" location="30,619" size="456,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Contains an array of claims and allows add/edit/removes" location="15,920" size="274,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Listeners for claim list view" location="30,1170" size="132,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Travel Claim data with an array of expenses and getter/setters for each attribute of the claim" location="405,900" size="451,12" fontInfo="Sans-8-0"/>
+  <children xsi:type="editmodel:LabelObjectEditModel" name="Expense data with getter and setters for each information" location="628,920" size="281,12" fontInfo="Sans-8-0"/>
+  <diagramOptions xsi:type="options:ClassDiagramOptions" level="-1" showScope="InPackage" properties="wireOptions=7;Product=eUML2"/>
+  <boardSetting snapToGeometry="true" gridEnabled="true" gridSpacing="15,15" gridOrigin="0,0" rulerUnit="pixel" gridVisibility="false">
+    <leftRuler/>
+    <topRuler/>
+  </boardSetting>
+  <classDiagramPreferences xsi:type="editmodel:UMLClassDiagramPreference" showPopupBars="true" showConnectionHandles="true" attributeSorter="Natural" methodSorter="Natural" showClassStereotype="true" showPackageStereotype="true" showDependencyStereotype="true" showInterfaceStereotype="true" innerClassSorter="Natural" showPublicAttributes="true" showPackageAttributes="true" showStaticAttributes="true" showPublicMethods="true" showPackageMethods="true" showStaticMethods="true" showPublicInnerClasses="true" showPackageInnerClasses="true" showStaticInnerClasses="true" packageIndication="3" showAttributeProperty="true"/>
+</editmodel:ClassDiagramEditModel>

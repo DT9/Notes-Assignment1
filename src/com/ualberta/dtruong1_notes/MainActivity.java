@@ -22,11 +22,9 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Date;
 
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -45,75 +43,84 @@ import com.google.gson.reflect.TypeToken;
 import com.ualberta.dtruong1_notes.TravelClaim.Status;
 
 /**
- * @author dtruong1
+ * @author               dtruong1  main Activity where launcher starts, displays claim list
+ * @uml.dependency   supplier="com.ualberta.dtruong1_notes.ClaimListController"
+ * @uml.dependency   supplier="com.ualberta.dtruong1_notes.ListExpenseActivity"
+ * @uml.dependency   supplier="com.ualberta.dtruong1_notes.AddClaimInfo"
+ * @uml.dependency   supplier="com.ualberta.dtruong1_notes.EditClaimInfo"
  */
 public class MainActivity extends Activity {
 	/**
-	 * @uml.property name="editableClaim"
-	 * @uml.associationEnd
+	 * @uml.property   name="editableClaim"
+	 * @uml.associationEnd   
 	 */
-	static protected TravelClaim editableClaim;
-	static protected ArrayAdapter<TravelClaim> claimAdapter;
-	private String FILENAME1 = "infoclaims";
+	static protected TravelClaim editableClaim; // claim to be edited
+	static protected ArrayAdapter<TravelClaim> claimAdapter; // Adapter claim
+																// list view
+	private String FILENAME1 = "infoclaims"; // save file name
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		// loads file
 		loadFromFile();
 
+		// Initiates claim list view
 		ArrayList<TravelClaim> claimlist = ClaimListController.getClaimList();
 		final ArrayList<TravelClaim> cll = new ArrayList<TravelClaim>(claimlist);
 		ListView claims = (ListView) findViewById(R.id.listView1);
 		claimAdapter = new ArrayAdapter<TravelClaim>(this,
 				android.R.layout.simple_list_item_1, cll);
 		claims.setAdapter(claimAdapter);
-
+		// Adds listeners for each claims
 		ClaimListController.addListener(new Listener() {
 			@Override
 			public void update() {
+				// Refreshes list view
 				cll.clear();
 				cll.addAll(ClaimListController.getClaimList());
 				claimAdapter.notifyDataSetChanged();
 			}
 		});
 
+		// Shows expenses on claim click
 		claims.setOnItemClickListener(new OnItemClickListener() {
 
 			@Override
 			public void onItemClick(AdapterView<?> adapterview, View view,
 					int position, long id) {
-				// TODO Auto-generated method stub
+				//Launches expense list activity
 				final int pos = position;
 				Intent intent = new Intent(MainActivity.this,
 						ListExpenseActivity.class);
 				editableClaim = ClaimListController.getItem(pos);
-				// for (TravelClaim claim: ClaimListController)
-				// Toast.makeText(MainActivity.this,"" ,
-				// Toast.LENGTH_LONG).show();
 				startActivity(intent);
 			}
 		});
 
+		//Long click shows Edit, Email, or Delete
 		claims.setOnItemLongClickListener(new OnItemLongClickListener() {
 
 			@Override
 			public boolean onItemLongClick(AdapterView<?> adapterview,
 					View view, int position, long id) {
 				final int pos = position;
+				// Alert dialog built
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						MainActivity.this);
 				builder.setCancelable(true);
 				builder.setTitle(R.string.long_click_claim).setItems(
 						R.array.claim_long_array,
 						new DialogInterface.OnClickListener() {
+							@Override
 							public void onClick(DialogInterface dialog,
 									int which) {
 								// The 'which' argument contains the index
 								// position
 								// of the selected item
 								TravelClaim claim = cll.get(pos);
-
+								
 								switch (which) {
 								case 0: // edit
 									if (claim.getStatus() == Status.approved
@@ -169,16 +176,19 @@ public class MainActivity extends Activity {
 		});
 	}
 
+	@Override
 	public void onStart() {
 		super.onStart();
 
 	}
 
+	@Override
 	public void onResume() {
 		super.onResume();
 		saveInFile();
 	}
 
+	@Override
 	public void onPause() {
 		super.onPause();
 
@@ -190,12 +200,14 @@ public class MainActivity extends Activity {
 		return true;
 	}
 
+	// add claim item to list
 	public void addClaimItem(View v) {
 		Intent intent = new Intent(MainActivity.this, AddClaimInfo.class);
 		startActivity(intent);
 
 	}
 
+	// Loads file
 	@SuppressWarnings("unchecked")
 	private void loadFromFile() {
 		Gson gson = new Gson();
@@ -203,12 +215,11 @@ public class MainActivity extends Activity {
 			FileInputStream fis = openFileInput(FILENAME1);
 			InputStreamReader in = new InputStreamReader(fis);
 			// http://google-gson.googlecode.com/…/c…/google/gson/Gson.html
-			// 2015-1-20 
+			// 2015-1-20
 
 			Type typeOfT = new TypeToken<ArrayList<TravelClaim>>() {
 			}.getType();
-			Object tweets = gson.fromJson(in, typeOfT);
-			Toast.makeText(this, tweets.toString(), Toast.LENGTH_LONG).show();
+			Object tweets = gson.fromJson(in, typeOfT); // Gson loads
 			ClaimListController.claimlist = (ArrayList<TravelClaim>) tweets;
 			fis.close();
 
@@ -221,7 +232,7 @@ public class MainActivity extends Activity {
 		}
 
 	}
-
+	// Saves claims to internal storage
 	public void saveInFile() {
 		Gson gson = new Gson();
 

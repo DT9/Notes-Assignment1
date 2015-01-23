@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author dtruong1
+ * @author dtruong1 Struct of Expense item values
  */
 public class ExpenseItem implements Serializable {
 
@@ -24,10 +24,7 @@ public class ExpenseItem implements Serializable {
 
 	public enum CurrencyUnit {
 
-		CAD,
-		USD,
-		EUR, 
-		GBP;
+		CAD, USD, EUR, GBP;
 	}
 
 	/**
@@ -35,15 +32,10 @@ public class ExpenseItem implements Serializable {
 	 */
 	public enum Category {
 
-		airfare("airfare"), 
-		groundtransport("groundtransport"),
-		vehiclerental("vehiclerental"), 
-		fuel("fuel"), 
-		parking("parking"),
-		registration("registration"), 
-		accommodation("accommodation"), 
-		meal("meal");
-		
+		airfare("airfare"), groundtransport("groundtransport"), vehiclerental(
+				"vehiclerental"), fuel("fuel"), parking("parking"), registration(
+				"registration"), accommodation("accommodation"), meal("meal");
+
 		private String cate;
 
 		Category(String cates) {
@@ -56,6 +48,7 @@ public class ExpenseItem implements Serializable {
 		}
 	}
 
+	// Constructor adds new expenses to the claim
 	public ExpenseItem(Date date, Category category, String text, int amount,
 			CurrencyUnit currency) {
 		// TODO Auto-generated constructor stub
@@ -68,57 +61,48 @@ public class ExpenseItem implements Serializable {
 
 	@Override
 	public String toString() {
+		// Returns a string of all expense information
 		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		String text = formatter.format(date) + "-" + category.toString() + "\n"
 				+ this.text + "\nAmount: " + amount + " " + currency.toString();
 		return text;
 	}
 
-
 	public int getAmount() {
 		return amount;
 	}
-
 
 	public void setAmount(int amount) {
 		this.amount = amount;
 	}
 
-
 	public CurrencyUnit getCurrency() {
 		return currency;
 	}
-
 
 	public void setCurrency(CurrencyUnit currency) {
 		this.currency = currency;
 	}
 
-
 	public String getText() {
 		return text;
 	}
-
 
 	public void setText(String text) {
 		this.text = text;
 	}
 
-
 	public Category getCategory() {
 		return category;
 	}
-
 
 	public void setCategory(Category category) {
 		this.category = category;
 	}
 
-
 	public Date getDate() {
 		return date;
 	}
-
 
 	public void setDate(Date date) {
 		this.date = date;
@@ -132,6 +116,30 @@ public class ExpenseItem implements Serializable {
 	public void setCurrency(String string) {
 		// TODO Auto-generated method stub
 		this.currency = CurrencyUnit.valueOf(string);
+	}
+
+	/**
+	 * @uml.property  name="travelClaim"
+	 * @uml.associationEnd  inverse="expenseItem:com.ualberta.dtruong1_notes.TravelClaim"
+	 */
+	private TravelClaim travelClaim;
+
+	/**
+	 * Getter of the property <tt>travelClaim</tt>
+	 * @return  Returns the travelClaim.
+	 * @uml.property  name="travelClaim"
+	 */
+	public TravelClaim getTravelClaim() {
+		return travelClaim;
+	}
+
+	/**
+	 * Setter of the property <tt>travelClaim</tt>
+	 * @param travelClaim  The travelClaim to set.
+	 * @uml.property  name="travelClaim"
+	 */
+	public void setTravelClaim(TravelClaim travelClaim) {
+		this.travelClaim = travelClaim;
 	}
 
 }
