@@ -13,7 +13,7 @@ import java.util.List;
 import com.ualberta.dtruong1_notes.ExpenseItem.CurrencyUnit;
 
 /**
- * @author  Dennis
+ * @author   Dennis
  */
 public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 	
@@ -23,7 +23,7 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 	private static final long serialVersionUID = 3695701892336777254L;
 
 	/**
-	 * @author  dtruong1
+	 * @author   dtruong1
 	 */
 	public enum Status {
 		/**
@@ -44,11 +44,24 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 		 */
 		approved;
 	}
+	/**
+	 * @uml.property  name="status"
+	 * @uml.associationEnd  
+	 */
 	private Status status;
+	/**
+	 * @uml.property  name="editable"
+	 */
 	private Boolean editable = true;
 	private int[] total;
+	/**
+	 * @uml.property  name="date"
+	 */
 	private Date date;
 	private Date end;
+	/**
+	 * @uml.property  name="text"
+	 */
 	private String text;
 	private ArrayList<ExpenseItem> items = new ArrayList<ExpenseItem>();
 	/**
@@ -90,6 +103,10 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 		this.items.remove(expense);
 	}
 	
+	/**
+	 * @return
+	 * @uml.property  name="items"
+	 */
 	public ArrayList<ExpenseItem> getItems(){
 		return items;
 	}
@@ -102,6 +119,10 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 	}
 	/*
 	 * @return  the total
+	 * @uml.property  name="total"
+	 */
+	/**
+	 * @return
 	 * @uml.property  name="total"
 	 */
 	public String getTotal() { //String
@@ -169,18 +190,34 @@ public class TravelClaim implements Comparable<TravelClaim>,Serializable{
 		this.editable = editable;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="status"
+	 */
 	public Status getStatus() {
 		return status;
 	}
 
+	/**
+	 * @param status
+	 * @uml.property  name="status"
+	 */
 	public void setStatus(Status status) {
 		this.status = status;
 	}
 
+	/**
+	 * @return
+	 * @uml.property  name="end"
+	 */
 	public Date getEnd() {
 		return end;
 	}
 
+	/**
+	 * @param end
+	 * @uml.property  name="end"
+	 */
 	public void setEnd(Date end) {
 		this.end = end;
 	}

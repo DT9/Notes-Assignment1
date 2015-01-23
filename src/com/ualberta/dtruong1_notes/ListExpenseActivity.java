@@ -1,11 +1,21 @@
 package com.ualberta.dtruong1_notes;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.ualberta.dtruong1_notes.TravelClaim.Status;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -22,8 +32,15 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * @author  dtruong1
+ */
 public class ListExpenseActivity extends Activity {
 
+	/**
+	 * @uml.property  name="editableExpense"
+	 * @uml.associationEnd  
+	 */
 	static ExpenseItem editableExpense = null;
 	static ArrayAdapter<ExpenseItem> expenseAdapter;
 	@Override
@@ -104,6 +121,8 @@ public class ListExpenseActivity extends Activity {
     	//Toast.makeText(this, "ON Start!", Toast.LENGTH_LONG).show();
 		TextView total = (TextView) findViewById(R.id.claimcurrency);
 		total.setText(MainActivity.editableClaim.getTotal());
+		saveInFile();
+		
 	}
 	
 	@Override
@@ -121,6 +140,23 @@ public class ListExpenseActivity extends Activity {
 
     	}
 	
-	
+	private String FILENAME = "claiminfo";
 
+	public void saveInFile() {
+		Gson gson = new Gson();
+		
+		try {
+			FileOutputStream fos = openFileOutput(FILENAME,Context.MODE_PRIVATE);
+			OutputStreamWriter osw = new OutputStreamWriter(fos);
+			gson.toJson(ClaimListController.getClaimList(), osw);
+			osw.flush();
+			fos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }

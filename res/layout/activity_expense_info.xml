@@ -35,6 +35,7 @@
         android:layout_marginLeft="17dp"
         android:layout_toRightOf="@+id/textView2"
         android:ems="10"
+        android:hint="11/24/2014"
         android:inputType="date" />
 
     <TextView

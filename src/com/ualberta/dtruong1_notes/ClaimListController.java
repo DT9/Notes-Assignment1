@@ -16,7 +16,7 @@ public class ClaimListController implements Serializable {
 	 */
 	private static final long serialVersionUID = 1701493528441668039L;
 	//lazy singleton
-	private static ArrayList<TravelClaim> claimlist= null;
+	static ArrayList<TravelClaim> claimlist= null;
 	protected static ArrayList<Listener> listeners = new ArrayList<Listener>();
 	
 	public static ArrayList<TravelClaim> getClaimList() {
@@ -62,7 +62,10 @@ public class ClaimListController implements Serializable {
 			listener.update();
 		}
 	}
-	
+	public static void loadClaimFile(ArrayList<TravelClaim> fileclaim){
+		
+		claimlist = fileclaim;
+	}
 	public static void addListener(Listener l) {
 		listeners.add(l);
 	}

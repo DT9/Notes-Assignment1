@@ -13,13 +13,22 @@ public class ExpenseItem implements Serializable{
 	 * expense item id
 	 */
 	private static final long serialVersionUID = -6896056147275778175L;
+	/**
+	 * @uml.property  name="date"
+	 */
 	private Date date;
 	/**
 	 * @uml.property  name="category"
 	 * @uml.associationEnd  
 	 */
 	private Category category;
+	/**
+	 * @uml.property  name="text"
+	 */
 	private String text;
+	/**
+	 * @uml.property  name="amount"
+	 */
 	private int amount = 0;
 	/**
 	 * @uml.property  name="currency"
@@ -28,7 +37,7 @@ public class ExpenseItem implements Serializable{
 	private CurrencyUnit currency;
 	
 	/**
-	 * @author  dtruong1
+	 * @author   dtruong1
 	 */
 	public enum CurrencyUnit {
 		/**
@@ -51,7 +60,7 @@ public class ExpenseItem implements Serializable{
 	}
 	
 	/**
-	 * @author  dtruong1
+	 * @author   dtruong1
 	 */
 	public enum Category {
 		/**
