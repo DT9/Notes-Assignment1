@@ -82,7 +82,7 @@ public class TravelClaim implements Comparable<TravelClaim> {
 	public String toString() {
 		DateFormat formatter = new SimpleDateFormat("MM/dd/yyyy");
 		String claim = status.toString() + "\n" + formatter.format(date)
-				+ " to " + formatter.format(end) + "\n" + getTotal();
+				+ " to " + formatter.format(end) + "\n" + getTotal() + "\n" + getText();
 		return claim;
 	}
 
