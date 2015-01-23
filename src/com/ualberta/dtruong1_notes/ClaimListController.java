@@ -16,7 +16,7 @@ public class ClaimListController implements Serializable {
 	 */
 	private static final long serialVersionUID = 1701493528441668039L;
 	//lazy singleton
-	static ArrayList<TravelClaim> claimlist= null;
+	protected static ArrayList<TravelClaim> claimlist= null;
 	protected static ArrayList<Listener> listeners = new ArrayList<Listener>();
 	
 	public static ArrayList<TravelClaim> getClaimList() {
@@ -39,10 +39,7 @@ public class ClaimListController implements Serializable {
 		notifyListeners();
 		
 	}
-	public int size() {
-		return claimlist.size();
-	}
-	
+
 	public boolean contains(TravelClaim claim) {
 		return claimlist.contains(claim);
 	}

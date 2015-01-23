@@ -50,7 +50,6 @@ public class AddClaimInfo extends Activity implements OnItemSelectedListener{
 		String enddate = viewEndDate.getText().toString();
 		String desc = viewDesc.getText().toString();
 		String text = viewStatus.getSelectedItem().toString();
-		int pos = viewStatus.getSelectedItemPosition();
 		
 		DateFormat format = new SimpleDateFormat("MM/dd/yyyy");
 		Date date = format.parse(startdate);
