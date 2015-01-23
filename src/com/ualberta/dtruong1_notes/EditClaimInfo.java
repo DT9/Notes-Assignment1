@@ -56,7 +56,7 @@ public class EditClaimInfo extends Activity {
 		return true;
 	}
 
-	public EditClaimInfo(View v) throws ParseException {
+	public void EditClaimInfoButton(View v) throws ParseException {
 		// Obtains id of each view
 		EditText viewDate = (EditText) findViewById(R.id.claimDate);
 		EditText viewDesc = (EditText) findViewById(R.id.claimDesc);
