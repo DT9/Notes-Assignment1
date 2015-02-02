@@ -1,8 +1,8 @@
 # Notes-assignment1
-Simple, attractive, and easy-to-use travel expense tracking application
+Simple, attractive, and easy-to-use travel expense tracking application.
 
 # License
-Copyright 2015 Dennis Truong
+Copyright 2015 Dennis Truong 
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
